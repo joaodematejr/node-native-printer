@@ -12,15 +12,15 @@ module.exports = function(){
 		
 		if(cmd.stderr.toString('utf-8')){
 			console.log("Error: ");
-			console.log(cmd.stderr.toString('utf-8'));
+			console.log("15", cmd.stderr.toString('utf-8'));
 			process.exit(1);
 		}
 
 		if(output.includes('libcups2-dev')){
-			console.log('libcups2-dev found!');
+			console.log("20", 'libcups2-dev found!');
 		}
 		else{
-			console.error('libcups2-dev is required but was not found');
+			console.error("23", 'libcups2-dev is required but was not found');
 			process.exit(1);
 		}
 
@@ -29,9 +29,9 @@ module.exports = function(){
 	cmd = spawnSync('npm', ['run', 'build']);
 	
 	if(output = cmd.stderr.toString('utf-8')){
-		console.log(output);
+		console.log("32", output);
 		process.exit(1);
 	}
 
-	console.log(cmd.stdout.toString('utf-8'));
+	console.log("36", cmd.stdout.toString('utf-8'));
 };
